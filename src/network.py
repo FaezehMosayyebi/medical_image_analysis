@@ -3,11 +3,14 @@ import torch
 import numpy as np
 import torch.nn.functional as F
 
+
 class ConvNonlin(nn.Module):
     def __init__(self, input_channels, output_channels, stride):
         super(ConvNonlin, self).__init__()
 
-        self.conv = nn.Conv3d(input_channels, output_channels, kernel_size=3, stride=stride, padding=1)
+        self.conv = nn.Conv3d(
+            input_channels, output_channels, kernel_size=3, stride=stride, padding=1
+        )
         self.norm = nn.BatchNorm3d(output_channels)
         self.relu = nn.LeakyReLU()
 
@@ -15,8 +18,11 @@ class ConvNonlin(nn.Module):
         x = self.conv(x)
         return self.relu(self.norm(x))
 
+
 class StackedConvLayers(nn.Module):
-    def __init__(self, input_feature_channels, output_feature_channels, num_convs, first_stride):
+    def __init__(
+        self, input_feature_channels, output_feature_channels, num_convs, first_stride
+    ):
         super(StackedConvLayers, self).__init__()
 
         self.input_channels = input_feature_channels
@@ -44,6 +50,7 @@ class StackedConvLayers(nn.Module):
 
     def forward(self, x):
         return self.blocks(x)
+
 
 class UNet(nn.Module):
     def __init__(self, input_channels, base_num_features, num_layers, do_ds):
@@ -83,25 +90,28 @@ class UNet(nn.Module):
 
         self.encoder_conv_blocks.append(
             StackedConvLayers(
-                    input_feature_channels=input_features,
-                    output_feature_channels=output_features,
-                    num_convs=2,
-                    first_stride=(2, 2, 2),
-                )
+                input_feature_channels=input_features,
+                output_feature_channels=output_features,
+                num_convs=2,
+                first_stride=(2, 2, 2),
+            )
         )
 
         nfeatures_from_down = final_num_features
 
         # upsampling
         for u in range(num_layers):
-
             # self.encoder_conv_blocks[-1] is bottleneck, so start with -2
             nfeatures_from_skip = self.encoder_conv_blocks[-(2 + u)].output_channels
 
             # number of features after upsampling ang concatting skip connections
             n_features_after_tu_and_concat = nfeatures_from_skip * 2
 
-            self.tu.append(nn.ConvTranspose3d(nfeatures_from_down, nfeatures_from_skip, (2, 2, 2), (2, 2, 2)))
+            self.tu.append(
+                nn.ConvTranspose3d(
+                    nfeatures_from_down, nfeatures_from_skip, (2, 2, 2), (2, 2, 2)
+                )
+            )
             self.decoder_conv_blocks.append(
                 nn.Sequential(
                     StackedConvLayers(

@@ -5,6 +5,5 @@
 from trainer import trainer
 
 if __name__ == "__main__":
-
     model_trainer = trainer()
     model_trainer.run_training()

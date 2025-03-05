@@ -100,8 +100,9 @@ class Batch_Loader(DataLoader):
 
         # Batching
         for i, ID in enumerate(selected_keys):
-            if not i < round(
-                self.batch_size * (1 - self.oversample_foreground_percent)
+            if (
+                not i
+                < round(self.batch_size * (1 - self.oversample_foreground_percent))
             ):  # We want to limit the voxels of a random channel in half the data of a batch
                 force_fg = True
             else:
@@ -223,7 +224,7 @@ class Batch_Loader(DataLoader):
                     (-min(0, bbox_z_lb), max(bbox_z_ub - shape[2], 0)),
                 ),
                 self.pad_mode,
-                **self.pad_kwargs_data
+                **self.pad_kwargs_data,
             )
 
             in_seg = np.copy(
@@ -242,7 +243,7 @@ class Batch_Loader(DataLoader):
                     (-min(0, bbox_z_lb), max(bbox_z_ub - shape[2], 0)),
                 ),
                 "constant",
-                **{"constant_values": 0}
+                **{"constant_values": 0},
             )
 
         return {"data": image, "seg": label}
