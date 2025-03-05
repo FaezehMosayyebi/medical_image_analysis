@@ -1,12 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: These codes are used to deteriorate data.                                 #
-#     Purpose: I aim to use these codes to make deteriorated data to check the ability       #
-#              of my network to deal with deteriorated data.                                 #
-#                                                                                            #
-##############################################################################################
-
 import numpy as np
 import nibabel as nib
 import os

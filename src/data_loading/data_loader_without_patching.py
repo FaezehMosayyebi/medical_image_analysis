@@ -1,12 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: A simple Dataloader and batch generator. With this reliable batch         #
-#     generator, you can be assured that every batch will be unique in each epoch.           #
-#     Purpose: Loading data and batch generating without patching data.                      #
-#                                                                                            #
-##############################################################################################
-
 import numpy as np
 from abc import ABCMeta, abstractmethod
 from builtins import object

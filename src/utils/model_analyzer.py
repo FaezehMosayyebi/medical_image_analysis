@@ -1,14 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: This code serves as a comprehensive network analysis tool. It provides    #
-#     valuable insights, including the number of layers that participate in the gradient     #
-#     flow, gradient magnitude visualization, layer names, output shapes, and parameter      #
-#     details. Additionally, it displays the counts of trainable and non-trainable           #
-#     parameters, forward/backward pass sizes, parameter sizes, and estimates the total      #
-#     memory footprint.                                                                      #
-#                                                                                            #
-##############################################################################################
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt

@@ -1,13 +1,7 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: These codes are a Python implementation of the algorithm published in     #
-#                   https://arxiv.org/abs/2208.14360 based on                                #
-#                   https://github.com/Mostafa-Ghazi/MRI-Augmentation                        #
-#     Purpose: I aim to use these codes to make deteriorated data to check the ability       #
-#              of my network to deal with deteriorated data.                                 #
-#                                                                                            #
-##############################################################################################
+#     Description: These codes are a Python implementation of the algorithm published in     
+#                   https://arxiv.org/abs/2208.14360 based on                                
+#                   https://github.com/Mostafa-Ghazi/MRI-Augmentation                        
+
 
 
 import numpy as np

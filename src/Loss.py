@@ -1,13 +1,8 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: The Soft Dice Loss is a variant of the Dice Loss function introduced in   #
-#     the paper 'https://arxiv.org/abs/1606.04797'. The used loss function combines the      #
-#     advantages of CrossEntropyLoss and DiceLoss to effectively calculate the overall loss  #
-#     during the process.                                                                    #
-#     Purpose: Calculating loss in a each epoch.                                             #
-#                                                                                            #
-##############################################################################################
+#     Description: The Soft Dice Loss is a variant of the Dice Loss function introduced in   
+#     the paper 'https://arxiv.org/abs/1606.04797'. The used loss function combines the      
+#     advantages of CrossEntropyLoss and DiceLoss to effectively calculate the overall loss  
+#     during the process.                                                                    
+
 
 import torch
 import torch.nn as nn

@@ -1,11 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: Augmenting data by using different transformers. Note that they just      #
-#     change data and doesn't add extra data to the database.                                #
-#                                                                                            #
-##############################################################################################
-
 from transformers import *
 
 

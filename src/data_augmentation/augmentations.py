@@ -1,9 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: Different changes that we apply to data to augment data.                  #
-#                                                                                            #
-##############################################################################################
 import numpy as np
 from scipy.ndimage import map_coordinates
 from scipy.ndimage import gaussian_filter

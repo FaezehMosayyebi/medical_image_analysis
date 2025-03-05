@@ -1,9 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: Transformers that are using diffetent type of changes to augment data.    #
-#                                                                                            #
-##############################################################################################
 import torch
 from torch.nn.functional import avg_pool3d
 from augmentations import *

@@ -1,15 +1,3 @@
-##############################################################################################
-#                                                                                            #
-#     coded by FaMo (faezeh.mosayyebi@gmail.com)                                             #
-#     Description: This data loader allows you to customize the batch and patch sizes and    #
-#     control the percentage of foreground classes in each patch. With this reliable batch    #
-#     generator, you can be assured that every batch will be unique in each epoch.            #
-#     Purpose: The primary purpose of this data loader is to efficiently handle data loading,#
-#     batch generation, and patching while allowing you to specify the desired percentage of #
-#     foreground classes.                                                                    #
-#                                                                                            #
-##############################################################################################
-
 import numpy as np
 from collections import OrderedDict
 from abc import ABCMeta, abstractmethod
